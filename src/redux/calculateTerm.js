@@ -1,9 +1,7 @@
 export const calculateTerm = (term, lastResult) => {
   // parsing the string term into an array
   // with entries representing numbers and operators
-  alert(term);
   const termArr = parseIntoArr(term, lastResult);
-  alert(termArr);
   let result = solveAddSub(solveMultDiv(solvePercentage(solveSqrt(termArr))));
   let rounded = Math.round(result * 100) / 100;
 
