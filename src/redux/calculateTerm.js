@@ -14,7 +14,7 @@ function parseIntoArr(term, lastResult) {
   let preTermArr = [...term.toString()];
   let result = [];
   
-  if((/[+\-\*\÷\%]/).test(preTermArr[0])) {
+  if((/[+\-\*÷\%]/).test(preTermArr[0])) {
     preTermArr.unshift(lastResult);
   }
 
