@@ -1,39 +1,172 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&display=swap');
+
+@font-face {
+  font-family: 'Casio';
+  src: 
+    url(https://manzdev.github.io/twitch-casio/dseg7-bold.woff2) format("woff2"),
+    url(https://manzdev.github.io/twitch-casio/dseg7-bold.woff) format("woff");
+  font-display: swap;
+}
+
+:root {
+  --font-button: #e5e6eb;
+  --font-brand: #b3b1bf;
+  --font-display: #000001;
+  --display-on: #d3e3e4;
+  --display-off: #3e4141;
+  --main-bg: #454253;
+  --dark-button: #2c2d31;
+  --light-button: #878699;
+  --display-bg-outter: #3d3a49;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Unbounded', cursive;
+  cursor: default;
+  user-select: none;
+}
+
+button {
+  border: none;
+  font-size: 15px;
+  overflow: hidden;
+  color: var(--font-button);
+  cursor: pointer;
+}
+
+.bigger-text-button {
+  font-size: 25px;
+}
+
+button:hover {
+  transform: scale(.97);
+  transition: transform .1s;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background: aqua;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-head {
+  height: 235px;
+  width: 330px;
+  background: var(--main-bg);
+  border-radius: 400px / 25px 25px 0 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calc-head-brand {
+  margin: 25px 0 15px 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--font-brand);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.calc-head-device {
+  margin: 6px 0 0 0;
+  color: var(--font-brand);
+  letter-spacing: .1px;
+  font-size: 10px;
+  font-weight: 300;
 }
 
-.App-header {
-  min-height: 100vh;
+.calc-head-model {
+  margin: 4.4px 0 0 0;
+  color: var(--font-brand);
+  letter-spacing: .1px;
+  font-size: 14.4px;
+}
+
+.calc-head-display-outter {
+  background: var(--display-bg-outter);
+  margin: 15px 0 0 0;
+  height: 120px;
+  width: 310px;
+  border-radius: 40px / 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.calc-head-display-inner {
+  height: 80px;
+  width: 270px;
+  padding: 10px;
+  font-size: 60px;
+  color: var(--font-display);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Casio', monospace;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.display-on {
+  background: var(--display-on);
+}
+
+.display-off {
+  background: var(--display-off);
+}
+
+.calc-body {
+  height: 335px;
+  width: 330px;
+  background: var(--main-bg);
+  border-radius: 270px / 0 0 30px 30px;
+}
+
+.calc-body-grid-top {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 38px 27px 16px 27px;
+  gap: 13px 10px;
+}
+
+.calc-body-grid-top button {
+  height: 42px;
+  border-radius: 15px / 10px;
+}
+
+.calc-body-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0px 27px;
+  gap: 13px 10px;
+}
+
+.non-plus-button {
+  height: 42px;
+  border-radius: 15px / 10px;
+}
+
+.plus-button {
+  grid-row: 1 / 3;
+  grid-column: 5;
+  border-radius: 15px / 10px;
+}
+
+.button-light {
+  background: var(--light-button);
+}
+
+.button-dark {
+  background: var(--dark-button);
 }
